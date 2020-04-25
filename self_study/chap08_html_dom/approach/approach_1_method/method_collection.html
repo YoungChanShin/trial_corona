@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      setInterval(() => {
+        now_date = new Date();
+        hours = now_date.getHours();
+        mins = now_date.getMinutes();
+        secs = now_date.getSeconds();
+        const time = document.getElementById("clock");
+        time.innerText = hours + "시 " + mins + "분 " + secs + "초";
+      }, 500);
+    </script>
+  </head>
+  <body>
+    <h2>현재 시각은...</h2>
+    <h1 id="clock"></h1>
+  </body>
+</html>

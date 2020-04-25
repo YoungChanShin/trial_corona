@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function f() {
+        tel_info = document.getElementById("info");
+
+        tel = document.getElementById("tel_num").value;
+        tel_node = document.createElement("p");
+        tel_text = document.createTextNode(tel);
+        tel_node.appendChild(tel_text);
+
+        tel_pwd = document.getElementById("phone_pwd").value;
+        tel_pwd_node = document.createElement("p");
+        tel_pwd_text = document.createTextNode(tel_pwd);
+        tel_pwd_node.appendChild(tel_pwd_text);
+
+        tel_info.appendChild(tel_node);
+        tel_info.appendChild(tel_pwd_node);
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 
+        1. 텍스트 필드 값: id password  
+     -->
+    <form action="http://localhost:5000/login" method="POST">
+      id <input type="text" id="id" name="id" /> pwd
+      <input type="password" id="pwd" name="pwd" />
+      <button type="submit">go</button>
+    </form>
+
+    <input type="tel" id="tel_num" />
+    <input type="password" id="phone_pwd" />
+    <button onclick="f()">정보 추가</button>
+
+    <hr />
+    <p>입력하신 번호와 비밀번호는...</p>
+    <p id="info"></p>
+  </body>
+</html>
